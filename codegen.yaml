@@ -1,0 +1,12 @@
+schema:
+  - ${REACT_APP_GRAPHQL_URI}:
+      headers:
+        Authorization: "bearer ${REACT_APP_GITHUB_TOKEN}"
+documents: "./src/**/*.{ts,tsx}"
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
